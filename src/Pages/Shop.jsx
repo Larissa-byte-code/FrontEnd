@@ -10,6 +10,7 @@ const Shop=() =>{
             <Popular/>
             <Offers/>
             <NewCollections/>
+            <NewLetter/>
         </div>
     )
 }
