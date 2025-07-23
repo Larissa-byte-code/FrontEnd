@@ -3,7 +3,7 @@ import { ShopContext } from '../Context/ShopContext';
 import './CSS/ShopCategory.css';
 import dropdown_icon from '../Components/Assets/dropdown_icon.png'
 import Item from '../Components/Item/Item'
-
+import './CSS/ShopCategory.css'
 const ShopCategory = (props) => {
   const { all_product } = useContext(ShopContext);
   const filteredProducts = all_product.filter(item => item.category === props.category);
