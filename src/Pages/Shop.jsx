@@ -6,7 +6,7 @@ import NewCollections from "../Components/NewCollections/NewCollections";
 import NewLetter from "../Components/NewLetter/NewLetter";
 const Shop=() =>{
     return(
-        <div>
+         <div>
             <Hero/>
             <Popular/>
             <Offers/>
