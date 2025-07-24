@@ -15,7 +15,7 @@ function App() {
   return (
     
     <div>
-      {PROPS/*Transfert des données d’un composant parent à un composant enfant. */}
+      {/*PROPS    Transfert des données d’un composant parent à un composant enfant. */}
 
       <BrowserRouter>
       <Navbar />
