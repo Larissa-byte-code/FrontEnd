@@ -7,8 +7,8 @@ export const ShopContext=createContext(null);
 //ajout fonction getdefaultCart Initialisation du panier
 const getDefaultCart=()=>{
     let cart={};
-    for (let index = 0; index < all_product.length+1; index++) {
-        cart[index]=0;
+    for (let i = 1; i <= all_product.length; i++) {
+        cart[i]=0;
         
     }
     return cart;
