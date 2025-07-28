@@ -24,7 +24,39 @@ const ShopContextProvider =(props)=>{
     const removeFromCart=(itemId)=>{
      setCartItems(prev => ({ ...prev, [itemId]: Math.max(prev[itemId] - 1, 0) }));
     }
+    const getTotalCartAmount= ()=>{
+        let totalAmount=0;
+        //parcourir les clés,l'Id
+        for(const item in cartItems)
+        {
+            if(cartItems[item]>0)
+            {
+                //On cherche dans all_product le produit dont l'id correspond à la clé item
+                let itemInfo=all_product.find((product)=>product.id===Number(item))
+                //quantité (cartItems[item])
+                //prix unitaire (itemInfo.new_price)
+                totalAmount+=itemInfo.new_price*cartItems[item];
+            }
+            
+        }
+        return totalAmount;
+    };
+    const getTotalCartItems=()=>{
+        let totalItem=0;
+        for(const item in cartItems)
+        {
+            if(cartItems[item]>0)
+            {
+               totalItem+= cartItems[item];
+            }
+        }
+        return totalItem;
+    }
+
+
     const contextValue={
+        getTotalCartItems,
+        getTotalCartAmount,
         all_product,
         cartItems,
         addToCart,
