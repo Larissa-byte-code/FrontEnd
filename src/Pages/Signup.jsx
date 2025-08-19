@@ -1,9 +1,9 @@
 
 import React, { useState } from "react";
 import './CSS/Signup.css'
-import all_users from "../Components/Assets/LoginU";
-
+import { useNavigate } from 'react-router-dom';
 const Signup=() =>{
+    const navigate = useNavigate();
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -25,23 +25,33 @@ const Signup=() =>{
       return;
     }
 
-    const userExists = all_users.some(user => user.email === email);
-    if (userExists) {
-      alert("Cet email est déjà utilisé");
-      return;
-    }
-
-    const newUser = {
-      id: all_users.length + 1,
+    // Envoi vers ASP.NET API
+  fetch("http://localhost:5299/api/users/Signup", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
       name,
       email,
       password,
       role: "client"
-    };
-
-    all_users.push(newUser); 
-    alert("Inscription réussie !");
-  };
+    })
+  })
+  .then(res => {
+    if (!res.ok) {
+      return res.text().then(text => { throw new Error(text); });
+    }
+    return res.text();
+  })
+  .then(msg => {
+    alert(msg);
+    navigate("/"); 
+  })
+  .catch(err => {
+    alert("Erreur : " + err.message);
+  });
+};
      return (
     <div className="Signup">
       <div className="Signup-container">
