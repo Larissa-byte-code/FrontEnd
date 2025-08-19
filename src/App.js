@@ -7,6 +7,7 @@ import Product from './Pages/Product';
 import LoginSignup from './Pages/LoginSignup';
 import Shop from './Pages/Shop';
 import Cart from './Pages/Cart';
+import Signup from './Pages/Signup';
 import { Footer } from './Components/Footer/Footer';
 import men_banner from './Components/Assets/banner_mens.png'
 import women_banner from './Components/Assets/banner_women.png'
@@ -19,6 +20,7 @@ function App() {
       {/*PROPS    Transfert des données d’un composant parent à un composant enfant. */}
 
       <BrowserRouter>
+      <div className="page-wrapper">
       <Navbar />
       <Routes>
         <Route path="/" element={<Shop />} />
@@ -28,8 +30,11 @@ function App() {
         <Route path="/product/:productId" element={<Product />} />
         <Route path="/cart" element={<CartItems />} />
         <Route path="/login" element={<LoginSignup />} />
+        <Route path="/signup" element={<Signup />} />
+
       </Routes>
       <Footer/>
+      </div>
     </BrowserRouter>
     </div>
   );

@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-wrapper > * {
+  flex-shrink: 0;
+}
+
+.page-wrapper > main {
+  flex-grow: 1;
+}

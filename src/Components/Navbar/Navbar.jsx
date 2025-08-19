@@ -14,7 +14,7 @@ return(
             <p>SHOPPER</p>
         </div>
         <ul className="nav-menu">
-            <li onClick={()=>{SetMenu("shop")}}><Link style={{textDecoration:'none'}} to='/'>Shop</Link> {menu==="shop"?<hr/>:<></>}</li>{/*if menu=shop alors /hr sinon rien*/} 
+            <li onClick={()=>{SetMenu("shop")}}><Link style={{textDecoration:'none'}} to='/'>Shop</Link> {menu==="shop"?<hr/>:<></>}</li>{/*if menu=shop alors /hr souligné sinon rien*/} 
             <li onClick={()=>{SetMenu("mens")}}><Link  style={{textDecoration:'none'}} to='/mens'>Men</Link> {menu==="mens"?<hr/>:<></>}</li>
             <li onClick={()=>{SetMenu("womens")}}><Link  style={{textDecoration:'none'}} to='/womens'>Women</Link>{menu==="womens"?<hr/>:<></>}</li>
             <li onClick={()=>{SetMenu("kids")}}><Link  style={{textDecoration:'none'}} to='/kids'>Kids</Link>{menu==="kids"?<hr/>:<></>}</li>
