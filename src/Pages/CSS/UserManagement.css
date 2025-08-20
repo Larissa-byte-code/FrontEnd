@@ -1,0 +1,66 @@
+.user-management {
+  height: 80vh;
+  background: #fce3fe;
+  padding-top: 100px;
+}
+
+.user-management-container {
+  width: 580px;
+  background: white;
+  margin: auto;
+  padding: 40px 60px;
+}
+
+.user-management-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.user-table th,
+.user-table td {
+  border: 1px solid #c9c9c9;
+  padding: 12px 20px;
+  text-align: left;
+  font-size: 16px;
+  color: #5c5c5c;
+}
+
+.user-table tr:hover {
+  background-color: #ffe3e3;
+  cursor: pointer;
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.user-form input {
+  height: 72px;
+  padding-left: 20px;
+  border: 1px solid #c9c9c9;
+  outline: none;
+  color: #5c5c5c;
+  font-size: 18px;
+}
+
+.user-form button {
+  height: 72px;
+  color: white;
+  background: #ff4141;
+  border: none;
+  font-size: 24px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.user-form button.delete {
+  background: #c70000;
+}
